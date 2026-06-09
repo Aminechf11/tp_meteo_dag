@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS meteo_data (
+    id SERIAL PRIMARY KEY,
+    ville VARCHAR(50),
+    temperature DOUBLE PRECISION,
+    vent DOUBLE PRECISION,
+    date_ingestion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS ingestion_log (
+    id SERIAL PRIMARY KEY,
+    execution_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    nb_lignes INTEGER
+);
